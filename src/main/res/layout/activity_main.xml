@@ -19,14 +19,14 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Red 0"
+            android:text="Cross 0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rpt"
             android:layout_weight="1" />
 
         <TextView
-            android:text="Yellow 0"
+            android:text="Circle 0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ypt"

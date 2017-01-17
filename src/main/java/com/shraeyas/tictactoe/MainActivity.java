@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity
         }
         iv.animate().rotation(3600).setDuration(250);
 
-        String str[] = {"Red ", "Yellow "};
+        String str[] = {"Cross ", "Circle "};
 
         for(int [] winn : win)
         {
@@ -85,14 +85,14 @@ public class MainActivity extends AppCompatActivity
                     {
                         rpt++;
                         TextView tv = (TextView)findViewById(R.id.rpt);
-                        tv.setText("Red "+rpt);
+                        tv.setText("Cross "+rpt);
                     }
 
                     else
                     {
                         ypt++;
                         TextView tv = (TextView)findViewById(R.id.ypt);
-                        tv.setText("Yellow "+ypt);
+                        tv.setText("Circle "+ypt);
                     }
                 }
 
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(MainActivity.this, "Red Plays First", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "Cross Plays First", Toast.LENGTH_SHORT).show();
 
 
     }
