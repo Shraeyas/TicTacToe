@@ -3,6 +3,7 @@ package com.shraeyas.tictactoe;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -61,17 +62,18 @@ public class MainActivity extends AppCompatActivity
         }
         iv.animate().rotation(3600).setDuration(250);
 
-        String str[] = {"Red ", "Yellow "};
+        String str[] = {"Cross ", "Circle "};
 
         for(int [] winn : win)
         {
-            if((state[winn[0]] == state[winn[1]] && state[winn[1]] == state[winn[2]] && state[winn[0]]!=2) || num ==9)
+            if(((state[winn[0]] == state[winn[1]] && state[winn[1]] == state[winn[2]] && state[winn[0]]!=2)) || num==9)
             {
                 //Toast.makeText(MainActivity.this, str[state[winn[0]]] + "won!!!", Toast.LENGTH_SHORT).show();
                 pra = false;
 
-                if(num == 9)
+                if((!(state[winn[0]] == state[winn[1]] && state[winn[1]] == state[winn[2]] && state[winn[0]]!=2)) && num==9)
                 {
+                    //pra=false;
                     TextView winnermessage = (TextView) findViewById(R.id.winnermessage);
                     winnermessage.setText("Game Drawn!!");
                 }
@@ -85,19 +87,25 @@ public class MainActivity extends AppCompatActivity
                     {
                         rpt++;
                         TextView tv = (TextView)findViewById(R.id.rpt);
-                        tv.setText("Red "+rpt);
+                        tv.setText("Cross "+rpt);
                     }
 
                     else
                     {
                         ypt++;
                         TextView tv = (TextView)findViewById(R.id.ypt);
-                        tv.setText("Yellow "+ypt);
+                        tv.setText("Circle "+ypt);
                     }
                 }
 
                 LinearLayout ll = (LinearLayout) findViewById(R.id.playagainlayout);
+
                 ll.setVisibility(View.VISIBLE);
+            }
+
+            else if(num==9)
+            {
+
             }
         }
     }
@@ -106,9 +114,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(MainActivity.this, "Red Plays First", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "Cross Plays First", Toast.LENGTH_SHORT).show();
 
 
     }
